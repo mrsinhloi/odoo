@@ -19,22 +19,22 @@ _logger = logging.getLogger(__name__)
 
 def og_title_from_path(env, path):
     if not path:
-        return "Odoo"
+        return "VODOO"
     odoo_path = urlsplit(path).path.removeprefix('/odoo')
     if not odoo_path or odoo_path == '/':
-        return "Odoo"
+        return "VODOO"
     try:
         triples = list(get_action_triples(env(su=True), odoo_path))
         if not triples:
-            return "Odoo"
+            return "VODOO"
         _, action, _ = triples[-1]
-        return action.name or "Odoo"
+        return action.name or "VODOO"
     except ValueError:
         _logger.debug("og_title_from_path failed for path %r", path, exc_info=True)
-        return "Odoo"
+        return "VODOO"
     except Exception:
         _logger.warning("og_title_from_path failed for path %r", path, exc_info=True)
-        return "Odoo"
+        return "VODOO"
 
 
 def clean_action(action, env):
