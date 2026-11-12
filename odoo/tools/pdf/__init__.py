@@ -120,8 +120,8 @@ if hasattr(NameObject, 'renumber_table'):
 class BrandedFileWriter(PdfWriter):
     def write_stream(self, *args, **kwargs):
         self.add_metadata({
-            '/Creator': "Odoo",
-            '/Producer': "Odoo",
+            '/Creator': "VODOO",
+            '/Producer': "VODOO",
         })
         super().write_stream(*args, **kwargs)
 
@@ -607,8 +607,8 @@ class OdooPdfFileWriter(PdfFileWriter):
 
         # Set odoo as producer
         self.addMetadata({
-            '/Creator': "Odoo",
-            '/Producer': "Odoo",
+            '/Creator': "VODOO",
+            '/Producer': "VODOO",
         })
         self.is_pdfa = True
 

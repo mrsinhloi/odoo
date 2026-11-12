@@ -393,7 +393,7 @@ class JsonRPCDispatcher(Dispatcher):
             error['message'] = "404: Not Found"
         elif isinstance(exc, SessionExpiredException):
             error['code'] = 100
-            error['message'] = "Odoo Session Expired"
+            error['message'] = "VODOO Session Expired"
 
         return self._response(error=error)
 
